@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
   margin: 0;
@@ -18,7 +19,11 @@ ol[role='list'] {
 .container {
   width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
 .column {
   display: flex;
   flex-direction: column;
@@ -26,6 +31,7 @@ ol[role='list'] {
 .centered {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-grow: 1;
 }
 .logo {
@@ -33,6 +39,10 @@ ol[role='list'] {
   height: 87px;
   margin-top: 79px;
   margin-bottom: 105px;
+}
+.about_us {
+  width: 540px;
+  margin-top: 50px;
 }
 .header {
   background: url('/assets/images/header_background.svg');
@@ -86,10 +96,187 @@ ol[role='list'] {
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
+  &:hover {
+    transition: 0.2s;
+    border: 4px solid #333333;
+  }
 }
 .blue {
   background: #5180F7;
 }
+.yellow {
+  background-color: #EEC04B;;
+}
 .gap20 {
-  gap:20px
+  gap:20px;
+}
+.gap30 {
+  gap: 30px;
+}
+#about {
+  background-color: #6d91ee;
+  background-image: url('/assets/images/blue_background.svg'), url('/assets/images/background_garbage.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: right, left;
+  background-blend-mode:normal;
+  min-height: 840px;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #E5E5E5;
+}
+
+
+.hedding2 {
+  font-size: 64px;
+  line-height: 90px;
+  color: #FFFFFF;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+}
+.text{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.where {
+  margin-top: 155px;
+  align-items: flex-end;
+  width: 495px;
+  text-align: end;
+}
+
+#services {
+  min-height: 950px;
+}
+.ticked {
+  background: 
+    url('/assets/images/left_top_line.svg'),
+    url('/assets/images/left_bottom_line.svg'),
+    url('/assets/images/right_top_line.svg'),
+    url('/assets/images/right_bottom_line.svg');
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 
+      left top,
+      left bottom,
+      right top,
+      right bottom;
+    padding: 16px;
+}
+.light_blue {
+  color: #6D91EE;
+}
+.content {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+}
+.card {
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  min-height: 500px;
+  gap: 10px;
+  &:hover {
+    background-color: #6D91EE;
+  }
+}
+.card_text_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+}
+.card_text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #324473;
+}
+.card_hedding {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+  color: #324473;
+}
+#testymonials {
+  min-height: 815px;
+}
+.reviews {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  gap: 45px;
+}
+.avatar {
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.review_card {
+  border: 1px solid #6D91EE;
+  border-radius: 40px;
+  display: flex;
+  &:hover {
+    background-color: #FFFFFF;
+  }
+}
+.review_text{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #22366A;
+}
+.user_name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #6D91EE;
+}
+#contacts {
+  min-height: 540px;
+}
+.socials {
+  display: flex;
+  background: #CEDCFF;
+  border-radius: 61px;
+  min-width: 200px;
+  height: 55px;
+  align-items: center;
+  justify-content: space-around;
+  &:hover {
+    transition: 0.2s;
+    border: 2px solid #22366A;
+    min-width: 350px;
+  }
+}
+.social_logo {
+  height: 60%;
+}
+.contact {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #333333;
+  padding: 20px;
+  padding-left: 50px;
+}
+.social_wrapper {
+  width: 300px;
+  padding-right: 200px;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 145px;
+  background: #0C1E49;
+}
+.nav {
+  flex-grow: 1;
+  color: #E5E5E5;
+  &:hover {
+    text-decoration: underline;
+  }
 }
