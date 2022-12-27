@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+}
+body {
+  background-color: antiquewhite;
+  margin: 0px;
+  font-family: 'Inter';
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.wrapper {
+  padding: 30px;
+  border: 3px dashed rgb(68, 0, 128);
+  background-color: white;
+  margin: 1em;
+  border-radius: 30px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+  &:checked + .slider{
+    background: #FD7918;
+  }
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+.slider.round {
+  border-radius: 34px;
+  &:before {
+    border-radius: 50%;
+  }
+}
+.checker {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #484848;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  & input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+  };
+  & input:checked ~ .checkmark {
+    background-color: #FD7918;;
+  }
+  &:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  & input:checked ~ .checkmark:after {
+    display: block;
+  }
+  & .checkmark:after {
+    left: 7px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  background-color: #eee;
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+.text_input {
+  font-size: 16px;
+  line-height: 24px;
+  color: #130F1C;
+  flex-grow: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  & input {
+    height: 48px;
+    flex-grow: 1;
+    background: #FAFAFA;
+    border-radius: 5px;
+    border: none;
+    padding-left: 12px;
+  }
+}
+::placeholder {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #BAB9BD;
+}
+.link {
+  text-decoration: none;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  align-self: center;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.or_with {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #5A5761;
+}
+
+.btn1 {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 48px;
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #651FFF;
+  border-radius: 5px;
+  border: none;
+  &:hover {
+    border: 2px solid #484848;
+    background: #7b3eff;
+  }
+}
+.reg_frame {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-width: 350px;
+  max-width: 800px;
+  width: 60vw;
+  gap: 12px;
+}
+.line {
+  width: 100%;
+  height: 2px;
+  background: #ECECEE;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+.social {
+  gap: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.social_link {
+  display: inline-block;
+  flex-grow: 1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #ECECEE;
+  border-radius: 5px;
+  text-align: center;
+  &:hover {
+    fill: #484848;
+    background-color: #ab8de6;
+  }
+}
+.contct_form {
+}
+.input_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 350px;
+  max-width: 800px;
+  width: 60vw;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.h2 {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  color: #130F1C;
+}
+.message {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #130F1C;
+  & textarea {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #130F1C;
+    width: 100%;
+    min-height: 50px;
+    background: #F3F3F5;
+    border-radius: 5px;
+    border: none;
+    &:active {
+      border: none;
+    }
+  }
+}
+.right {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+.small_right {
+  width: 200px;
+
+}
+.hidder {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 215px;
+  gap:35px;
+  background: #651FFF;
+  box-shadow: 40px 40px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 0px 0px 10px;
+}
+.h6 {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.white {
+  color: #FFFFFF;
+  max-width: 215px;
+}
+.content {
+  padding-left: 25px;
+}
+.checkout {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+}
+.order_details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.h3 {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: #130F1C;
+}
+.order_text {
+  display: block;
+}
+.order_text {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5A5761;
+}
+.order {
+  min-width: 300px;
+}
+.details {
+  min-width: 300px;
+}
+.detail_wrapper {
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-around;
+}
+
+
+.h5 {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #130F1C;
+}
+
+.card_details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card_no {
+  display: block;
+  flex-grow: 1;
+  min-width: 50%;
+  min-width: 300px;
+}

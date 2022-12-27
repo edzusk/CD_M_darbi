@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Input forms MD_02</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&family=Inter&family=Poppins:wght@400;500;600;700;900&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&family=Inter&family=Poppins:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <form action="">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+
+                <label class="switch">
+                    <input type="checkbox" checked="checked">
+                    <span class="slider round"></span>
+                </label>
+            </form>
+        </div>
+        <div class="wrapper">
+            <label class="checker">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                label
+            </label>
+            <label class="checker">
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+                label
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <label class="text_input">
+                label
+                <br>
+                <input type="text" name="" id="" placeholder="placeholder">
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <button type="submit" class="btn1">
+                label
+            </button>
+        </div>
+    </div>
+
+    <section class="register">
+        <div class="container">
+            <div class="wrapper">
+                <div class="upper">
+                    <form class="reg_frame">
+                        <label class="text_input">
+                            User name
+                            <br>
+                            <input type="text" name="user_name" id="" placeholder="User name" minlength="3" maxlength="20" required>
+                        </label>
+                        <label class="text_input">
+                            Password
+                            <br>
+                            <input type="password" name="password" id="" placeholder="Password" required="required">
+                        </label>
+                        
+                        <span class="comment">
+                            <label class="switch">
+                                <input type="checkbox" checked="checked">
+                                <span class="slider round"></span>
+                            </label>
+                            Subscribe to News
+                        </span>
+                        <a href="#" class="link">
+                            Forgot your password?
+                        </a>
+                        <button type="submit" class="btn1">Sign in</button>
+                    </form>
+                </div>
+                <div class="bottom">
+                    <div class="line"></div>
+                    <span class="or_with">or continue with</span>
+                    
+                    <br>
+                    <div class="social">
+                        <a href="#" target="_blank" class="social_link">
+                            <img src="/assets/images/google_logo.svg" alt="google logo">    
+                        </a>
+                        <a href="#" target="_blank" class="social_link">
+                            <img src="/assets/images/facebook_logo.svg" alt="facebook logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="wrapper">
+                <h2 class="h2">Contact Us</h2>
+                <form action="" class="contct_form">
+                    <div class="input_wrapper">
+                        <label class="text_input">
+                            Name
+                            <br>
+                            <input type="text" name="name" id="" placeholder="Name" required>
+                        </label>
+                        <label class="text_input">
+                            Company name
+                            <br>
+                            <input type="text" name="company" id="" placeholder="Company name">
+                        </label>
+                        <label class="text_input">
+                            Phone number
+                            <br>
+                            <input type="tel" name="phone" id="" placeholder="Phone number">
+                        </label>
+                        <label class="text_input">
+                            E-mail
+                            <br>
+                            <input type="email" name="e-mail" id="" placeholder="E-mail" required>
+                        </label>
+                    </div>
+                    <label class="checker">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        Subscribe to News
+                    </label>
+                    <label class="message">message <br>
+                        <textarea name="message" id="" cols="30" rows="10"></textarea>
+                    </label>
+                    <div class="right">
+                        <button type="submit" class="btn1 small_right">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="wrapper">
+                <div class="hidder">
+                    <div class="info">
+                        <h6 class="h6 white">
+                            Contact Information
+                        </h6>
+                        <h6 class="h6 white">
+                            Here’s some additional support text to help set user expectations. 
+                        </h6>
+                        <h6 class="h6 white">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_714_3677)">
+                                <path d="M18.3333 14.0999V16.5999C18.3342 16.832 18.2867 17.0617 18.1937 17.2744C18.1007 17.487 17.9643 17.6779 17.7933 17.8348C17.6223 17.9917 17.4204 18.1112 17.2005 18.1855C16.9807 18.2599 16.7477 18.2875 16.5166 18.2666C13.9523 17.988 11.4891 17.1117 9.32492 15.7083C7.31145 14.4288 5.60437 12.7217 4.32492 10.7083C2.91657 8.53426 2.04013 6.05908 1.76659 3.48325C1.74577 3.25281 1.77315 3.02055 1.84701 2.80127C1.92086 2.58199 2.03957 2.38049 2.19556 2.2096C2.35156 2.03871 2.54143 1.90218 2.75308 1.80869C2.96474 1.7152 3.19354 1.6668 3.42492 1.66658H5.92492C6.32935 1.6626 6.72142 1.80582 7.02806 2.06953C7.3347 2.33324 7.53499 2.69946 7.59159 3.09992C7.69711 3.89997 7.8928 4.68552 8.17492 5.44158C8.28704 5.73985 8.31131 6.06401 8.24485 6.37565C8.17838 6.68729 8.02398 6.97334 7.79992 7.19992L6.74159 8.25825C7.92789 10.3445 9.6553 12.072 11.7416 13.2583L12.7999 12.1999C13.0265 11.9759 13.3126 11.8215 13.6242 11.755C13.9358 11.6885 14.26 11.7128 14.5583 11.8249C15.3143 12.107 16.0999 12.3027 16.8999 12.4083C17.3047 12.4654 17.6744 12.6693 17.9387 12.9812C18.203 13.2931 18.3434 13.6912 18.3333 14.0999Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_714_3677">
+                                <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+                            123-456-7890
+                        </h6>
+                        <h6 class="h6 white">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.81541 4.58333C2.93828 4.43143 3.12578 4.33325 3.33344 4.33325H16.6668C16.8744 4.33325 17.0619 4.43143 17.1848 4.58333L10.0001 9.61262L2.81541 4.58333ZM0.666832 4.982C0.666661 4.99207 0.666641 5.00213 0.666773 5.01219V14.9999C0.666773 16.4689 1.86449 17.6666 3.33344 17.6666H16.6668C18.1357 17.6666 19.3334 16.4689 19.3334 14.9999V5.0122C19.3336 5.00213 19.3336 4.99206 19.3334 4.98198C19.3237 3.52123 18.1297 2.33325 16.6668 2.33325H3.33344C1.87047 2.33325 0.676525 3.52124 0.666832 4.982ZM17.3334 6.9206V14.9999C17.3334 15.3643 17.0312 15.6666 16.6668 15.6666H3.33344C2.96906 15.6666 2.66677 15.3643 2.66677 14.9999V6.92059L9.42664 11.6525C9.77096 11.8935 10.2292 11.8935 10.5736 11.6525L17.3334 6.9206Z" fill="white"/>
+                                </svg>
+                            support@minerva.com
+                        </h6>
+                    </div>
+                    <div class="content">
+                        <h2 class="h2">Contact Us</h2>
+                <form action="" class="contct_form">
+                    <div class="input_wrapper">
+                        <label class="text_input">
+                            Name
+                            <br>
+                            <input type="text" name="name" id="" placeholder="Name" required>
+                        </label>
+                        <label class="text_input">
+                            Company name
+                            <br>
+                            <input type="text" name="company" id="" placeholder="Company name">
+                        </label>
+                        <label class="text_input">
+                            Phone number
+                            <br>
+                            <input type="tel" name="phone" id="" placeholder="Phone number">
+                        </label>
+                        <label class="text_input">
+                            E-mail
+                            <br>
+                            <input type="email" name="e-mail" id="" placeholder="E-mail" required>
+                        </label>
+                    </div>
+                    <label class="checker">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        Subscribe to News
+                    </label>
+                    <label class="message">message <br>
+                        <textarea name="message" id="" cols="30" rows="10"></textarea>
+                    </label>
+                    <div class="right">
+                        <button type="submit" class="btn1 small_right">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="wrapper">
+                <div class="checkout">
+                    <h2 class="h2">Checkout</h2>
+                    <div class="order_details">
+                        <div class="order">
+                            <h3 class="h3">Your order</h3>
+                            <div class="detail_wrapper">
+                                <div>
+                                    <h5 class="h5">Eggshell Plant Pot</h5>
+                                    <span class="order_text">Size: Medium</span>
+                                    <span class="order_text">Qty: 1</span>
+                                    <span class="order_text">$25.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <h3 class="h3">Delivery Details</h3>
+                            <div class="detail_wrapper">
+                                <div>
+                                    <h5 class="h5">Adam Sandler</h5>
+                                    <span class="order_text">1234 Fake St/span>
+                                    <span class="order_text">Milwaukee, WI 53203</span>
+                                </div>
+                                <div>
+                                    <h5 class="h5">Shipping Speed</h5>
+                                    <span class="order_text">$7.00 No Rush Shipping</span>
+                                    <span class="order_text">Qty: 1</span>
+                                    <span class="order_text">Arrives by 1/16/22</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="h3">Payment Method</h3>
+                    <form action="">
+                        <div class="card_details">
+                            <label class="text_input">
+                                Card number
+                                <br>
+                                <input class="card_no" type="text" name="card_no" id="" placeholder="XXX-XXXX-XXXX-XXXX" required>
+                            </label>
+                            <div class="cvc_name">
+                                <label class="text_input">
+                                    Name
+                                    <br>
+                                    <input class="card_no" type="text" name="name" id="" placeholder="Name on card" required>
+                                </label>
+                                <label class="text_input">
+                                    CVC number
+                                    <br>
+                                    <input class="card_no" type="tel" name="cvc" id="" placeholder="000" required>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <button type="submit" class="btn1 small_right">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
