@@ -1,0 +1,211 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.home {
+  background-image:  url('./assets/images/home_background_left.png'),url('./assets/images/home_background.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right;
+  background-blend-mode:normal;
+  min-height: 1080px;
+}
+
+.my_button {
+  text-align: center;
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  min-height: 48px;
+}
+.blue_b {
+  background-color: aqua;
+  min-height: 45px;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+.back_b {
+  border: 2px solid aqua;
+  min-height: 45px;
+  border-radius: 50%;
+  align-self: flex-end;
+}
+.spec-btn {
+  box-shadow: 4px 4px 0 0px white, 4px 4px 0 1px #2ebaeb;
+  &:hover {
+    --bs-bg-opacity: 1;
+    background-color: rgb(89, 86, 220)!important;
+    box-shadow: 4px 4px 0 0px white, 4px 4px 0 1px rgb(89, 86, 220);
+    transition: 0.3s;
+  }
+}
+.spec-btn2 {
+  box-shadow: 4px 4px 0 0px #94D3EA, 4px 4px 0 1px #2ebaeb;
+  &:hover {
+    --bs-bg-opacity: 1;
+    background-color: rgb(89, 86, 220)!important;
+    box-shadow: 4px 4px 0 0px #94D3EA, 4px 4px 0 1px rgb(89, 86, 220);
+    transition: 0.3s;
+  }
+}
+.roboto {
+  font-family: 'Roboto','Mitr';
+  font-style: normal;
+}
+.mitr {
+  font-family: 'Mitr','Roboto';
+  font-style: normal;
+}
+
+.h1edited {
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 80px;
+}
+.spec_color {
+  color: #2ebaeb;
+}
+.unformated {
+  text-decoration: none;
+}
+.text_input {
+  line-height: 24px;
+  color: #130F1C;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  & input {
+    height: 56px;
+    flex-grow: 1;
+    background:#94D3EA;
+    border-radius: 28px;
+    border: none;
+    padding-left: 12px;
+  }
+}
+::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.h2custom {
+  font-size: 48px;
+  line-height: 56px;
+}
+.bg-custom {
+  --bs-bg-opacity: 1;
+  background-color: rgba(148, 211, 234, 1)!important;
+}
+.bg-custom2 {
+  --bs-bg-opacity: 1;
+  background-color: #2EBAEB!important;
+}
+.number {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border: 1px solid #2ebaeb;
+  border-radius: 50%;
+  color: #2ebaeb;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 21px;
+}
+.p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4F4F4F;
+}
+.services {
+  background-color: #F2F2F2;;
+}
+.testymonials {
+  background-color:  #95D4EB;;
+}
+
+.testy-card-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
