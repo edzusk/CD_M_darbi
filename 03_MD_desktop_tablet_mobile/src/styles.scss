@@ -17,12 +17,12 @@ body {
     grid-area: menuarea;
   }
   &__hero {
-    min-height: 70vh;
+    min-height: 60vw;
     background-color: #4c86c6;
     grid-area: heroarea;
   }
   &__main{
-    min-height: 40vh;
+    min-height: 30vw;
     background-color:#24344b;
     grid-area: mainarea;
   }
