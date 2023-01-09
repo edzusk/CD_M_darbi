@@ -791,8 +791,8 @@ console.log(swapObjkeys({a:1,z:24})); //Expected {1:'a',24:'z'}
 // Return the resulting object
 console.log('58-------------!');
 
-const fillValueas = (obj:{[key:string|number]:string|number}) => {
-    Object.keys(obj).forEach(el => obj[el] = obj[el] == '' || obj[el] == ' ' ? null : obj[el]);
+const fillValueas = (obj:{[key:string|number]:string}) => {
+    Object.keys(obj).forEach(el => obj[el] = obj[el].trim() == '' ? null : obj[el]);
     return obj;
 }
 
@@ -961,3 +961,4 @@ console.log(objWithStr({ eyeColor: 'green', age: 10 }, 'Garfield')); //Expected 
 console.log(objWithStr({ eyeColor: 'blue', age: 15 }, 'Twilight')); //Expected { eyeColor: 'blue', age: 15, favoriteMovie:  'Twilight' }
 
 //70
+
