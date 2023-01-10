@@ -559,8 +559,12 @@ interface startWith {
 }
 const sortArrByChar = (arr:string[]) => {
     let startWith:startWith= {};
-    arr.forEach(el => startWith[el.toLowerCase()[0]] = [])
-    arr.forEach(el => startWith[el.toLowerCase()[0]].push(el))
+    arr.forEach(el => {
+        startWith[el.toLowerCase()[0]] ? startWith[el.toLowerCase()[0]].push(el) : startWith[el.toLowerCase()[0]]= [el]
+    })
+
+    // arr.forEach(el => startWith[el.toLowerCase()[0]] = [])
+    // arr.forEach(el => startWith[el.toLowerCase()[0]].push(el))
     return startWith;
 }
 
@@ -809,7 +813,7 @@ console.log(fillValueas({ a: 'a', b: 'b ', c: ' ', d: '' })); //Expected { a: 'a
 // Return a new object with all available properties that we are interested in
 console.log('59-------------!');
 
-const personalInfo = (obj:{[key:string|number]:string|number}) => {
+const personalInfo = (obj:{[key:string]:string|number}) => {
     const neededInfo:string[]= ['fn', 'ln', 'weight', 'size'];
     let newObj:{[key:string|number]:string|number} = {};
     Object.keys(obj).forEach(el => {
@@ -838,7 +842,7 @@ console.log(personalInfo({fn: 'Matthew', ln: 'Müller', age: 19, email: 'matthew
 // Tip: try not to mutate the original array
 console.log('60-------------!');
 
-const addContinent = (arr:{[key:string|number]:string|number}[], str:string) => {
+const addContinent = (arr:{[key:string]:string|number}[], str:string) => {
     arr.forEach(el => el['continent'] = str)
     return arr
 }
@@ -856,7 +860,7 @@ console.log(addContinent([{ city: 'Stockholm', country: 'Sweden' }, { city: 'Par
 console.log('61-------------!');
 
 const countNumbers = (arr:number[]) =>{
-    let newObj:{[key:number]: number} = {};
+    let newObj:{[key:string]: number} = {};
     arr.forEach(el => newObj[el] = newObj[el] ? newObj[el]+1 : 1);
     return newObj;
 }
