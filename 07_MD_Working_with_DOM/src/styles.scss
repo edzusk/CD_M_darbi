@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+:root {
+  --c-main:#1FC2AE;
+  --c-tirquese: #017187;
+  --c-purple: rgba(92, 1, 135, 0.71);
+  --c-pink:rgba(135, 17, 1, 0.56);
+  --c-green: rgba(1, 135, 14, 0.63);
+  --c-aqua: #18D5E1;
+  --c-yellow: #E2CF22;
+  --c-blue:#011E87;
+  --c-white: #ffffff;
+  --c-body-bg:#FFFFFF;
+  --c-red-bg: #fa0000;
+}
+.sevenMode {
+  --c-main:#18D5E1;
+  --c-body-bg: #000000;
+}
+
+* {
+  box-sizing: border-box ;
+}
+
+body {
+  font-family: 'ABeeZee', sans-serif;
+  background-color: var(--c-body-bg);
+}
+
+.header {
+  padding-top: 50px;
+}
+
+.section {
+  padding-top: 55px;
+}
+.btn {
+  padding: 20px 40px;
+  font-size: 1.25rem;
+  color: var(--c-white);
+  border-radius: 8px;
+  background-color: var(--c-main);
+  cursor: pointer;
+}
+.footer {
+  padding-top: 50px;
+}
+.heading{
+  font-size: 3.5rem;
+  line-height: 120%;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--c-main);
+  border: 1px solid var(--c-main);
+  text-transform: uppercase;
+  padding: 116px ;
+}
+.textinput {
+  display: block;
+  margin-top: 25px;
+}
+
+.bg-purple{
+  background-color: var(--c-purple);
+  border: 1px solid var(--c-purple);
+}
+.bg-tirquese {
+  background-color: var(--c-tirquese);
+  border: 1px solid var(--c-tirquese);
+}
+.bg-pink {
+  background-color: var(--c-pink);
+  border: 1px solid var(--c-pink);
+}
+.bg-green {
+  background-color: var(--c-green);
+  border: 1px solid var(--c-green);
+}
+.bg-aqua {
+  background-color: var(--c-aqua);
+  border: 1px solid var(--c-aqua);
+}
+.bg-yellow {
+  background-color: var(--c-yellow);
+  border: 1px solid var(--c-yellow);
+}
+.bg-blue {
+  background-color: var(--c-blue);
+  border: 1px solid var(--c-blue);
+}
+.bg-red {
+  background-color: var(--c-red-bg);
+  border: 1px solid var(--c-red-bg);
+}
+
+.transparent {
+  opacity: 0;
+}
+
+.textoutput{
+  font-size: 1rem;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  font-weight: 700;
+}
