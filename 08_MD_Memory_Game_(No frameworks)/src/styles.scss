@@ -18,14 +18,32 @@ body {
   text-align: center;
   padding: 15px;
 }
+.text {
+  color: var(--c-secondary);
+  font-size: 1rem;
+  align-self: center;
+}
+.points {
+  justify-self: end;
+}
+.timer {
+  justify-self: start;
+}
+
 .hedding {
   color: var(--c-secondary);
   font-size: 1.6rem;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
+  align-self: center;
+  justify-self: center;
 }
 .flex {
   display: flex;
+}
+.grid-3{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
 }
 .btn {
   padding: 10px 20px;
@@ -43,10 +61,15 @@ body {
 .hidden {
   display: none !important;
 }
+.face{
+  cursor: pointer;
+  &:hover {
+    opacity: 70%;
+  }
+}
 .card {
   // border-radius: 50px;
   overflow: hidden;
-  cursor: pointer;
 }
 .section {
   padding: 25px;

@@ -13,13 +13,15 @@
 </head>
 <body>
     <header class="header">
-        <div class="container">
+        <div class="container grid-3">
+            <p class="text timer">timer</p>
             <h1 class="hedding">Zoo memory game</h1>
+            <p class="text points">Score: 0</p>
         </div>
     </header>
     <section class="section">
         <div class="container">
-            <div class="row levelSelector">
+            <div class="row levelSelector"> 
                 <div class="col-4 flex justify-content-center">
                     <button class="btn btn-level" value="6">Easy</button>
                 </div>
@@ -31,12 +33,15 @@
                 </div>
             </div>
             <div class="row g-3 gameField hidden"></div>
+            <div class="win hidden">
+                <img src="./assets/images/Asset 4you_winl_.png" alt="win">
+            </div>
         </div>
     </section>
     <footer class="footer">
         <div class="container flex justify-content-center">
             <a href="#">
-                <button class="btn reset">reset</button>
+                <button class="btn reset">New game</button>
             </a>
         </div>
     </footer>
