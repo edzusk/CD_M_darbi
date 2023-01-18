@@ -54,7 +54,7 @@ const clickSixthBtn = () => {
     setInterval(() => {
       if (i <= 10) {
         boxHeading[5].innerHTML = `${(i)}`;
-        i++;
+        i += 1;
       }
     }, 2000);
   });
