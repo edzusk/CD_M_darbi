@@ -12,7 +12,6 @@ let faces = getFaces();
 let backs = getBacks();
 // let gameStop = false;
 
-
 const cardBacks:{[key:string]:string} = {
   boy: './assets/images/boy.png',
   camel: './assets/images/camel.png',
@@ -110,18 +109,18 @@ const drawFiled = () => {
 //   }, 1000);
 // };
 
-const formatTime = (t:number) => {
-  const min = Math.floor(t / 60);
-  const sec = t % 60;
-  return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
-};
-document.querySelector('.timer').innerHTML = formatTime(currentTime);
+// const formatTime = (t:number) => {
+//   const min = Math.floor(t / 60);
+//   const sec = t % 60;
+//   return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+// };
+
 const winCheck = () => {
   if (guessedCards.length === fieldSize) {
     console.log('WIN WIN WIN');
     document.querySelector('.gameField').classList.add('hidden');
     document.querySelector('.win').classList.remove('hidden');
-    clearInterval(time);
+    // clearInterval(time);
     if (fieldSize === 6) {
       points += 1;
     } else if (fieldSize === 12) {
