@@ -1,4 +1,6 @@
-import {addCard, nextPrevious, pageContent, pagenumber} from './constants';
+import {
+  addCard, nextPrevious, pageContent, pagenumber,
+} from './constants';
 
 let page = 1;
 
@@ -22,8 +24,17 @@ type CharData = {
 const showdata = (charData: CharData, i:number) => {
   tumbnails[i].src = charData.image;
   names[i].innerHTML = charData.name;
-  races[i].innerHTML = charData.species;
+  races[i].innerHTML += charData.species;
   races[i].innerHTML += ` - ${charData.status}`;
+  if (charData.status === 'Alive') {
+    races[i].innerHTML += ' <span class="green">⭓</span>';
+  }
+  if (charData.status === 'Dead') {
+    races[i].innerHTML += ' <span class="red">⭓</span>';
+  }
+  if (charData.status === 'unknown') {
+    races[i].innerHTML += ' <span class="yellow">⭓</span>';
+  }
   origins[i].innerHTML = charData.origin.name;
   lastSeens[i].innerHTML = charData.location.name;
   fetch(charData.episode[0])
