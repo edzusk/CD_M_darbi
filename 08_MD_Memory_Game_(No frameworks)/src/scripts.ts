@@ -85,7 +85,7 @@ const flipCardBack = (ind:number) => {
 };
 
 const hideWrongGuess = () => {
-  cards.forEach((el, i) => {
+  cards.forEach((_, i) => {
     if (!guessedCards.includes(i)) {
       flipCardBack(i);
     }
@@ -139,7 +139,7 @@ const updateScore = () => {
 levelSelector.forEach((el, i) => {
   levelSelector[i].addEventListener('click', () => {
     fieldSize = (+levelSelector[i].value);
-    const colSize = i === 0 ? 'col-4' : i === 1 ? 'col-3' : 'col-2';
+    const colSize = i === 0 ? 'col-4' : (i === 1 ? 'col-3' : 'col-2');
     // startTimer();
     getRandomKeyNumbers();
     hideShow();
