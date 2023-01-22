@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Car collection</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container align-content-center">
+            <h1 class="headding title is-1">
+                90's Cars
+            </h1>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-variable is-2 is-multiline  parking"></div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="seperate"></div>
+        <h2 class="headding title is-3">
+            Add new car
+        </h2>
+          <form class="newCar" action="">
+              <div class="field">
+                <label class="label">Make</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-success make" type="text" placeholder="Text input" value="Car">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </div>
+                <p class="help is-success">You don't see your favorite 90's car? add it to collection</p>
+              </div>
+    
+              <div class="field">
+                <label class="label">Model</label>
+                <div class="control">
+                  <input class="input model" type="text" placeholder="Text input">
+                </div>
+              </div>
+    
+              <div class="field">
+                <label class="label">Picture</label>
+                <div class="control">
+                  <input class="input pictureLink" type="text" placeholder="Link">
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Year</label>
+                <div class="control">
+                  <div class="select">
+                    <select class="year">
+                      <option>1990</option>
+                      <option>1991</option>
+                      <option>1992</option>
+                      <option>1993</option>
+                      <option>1994</option>
+                      <option>1995</option>
+                      <option>1996</option>
+                      <option>1997</option>
+                      <option>1998</option>
+                      <option>1999</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                  <textarea class="textarea description" value="SHIT" placeholder="Description"></textarea>
+                </div>
+              </div>
+              
+              <div class="field is-grouped">
+                <div class="control">
+                  <button type="submit" class="button is-link js-add">Add to collection</button>
+                </div>
+              </div>
+          </form>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <h4 class="headding title is-5">phew, now this was tricky</h4>
+      </div>
+    </footer>
+    <script src="/scripts.js"></script>
+</body>
+</html>
+
+

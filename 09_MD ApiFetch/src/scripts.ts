@@ -89,3 +89,10 @@ const onPrevious = () => {
 
 onNext();
 onPrevious();
+
+
+const newf = () => {
+  console.log('sss');
+};
+
+
