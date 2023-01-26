@@ -1,0 +1,29 @@
+:root{
+  --c-main: #D9D9D9;
+  --c-secondary: #000000;
+  --c-content-bg: #A3A3A3;
+}
+body {
+  background-color: var(--c-main);
+}
+
+.section {
+  width: 100%;
+  border-top: 2px solid var(--c-secondary);
+}
+.header {
+  text-align: center;
+  color: var(--c-secondary);
+}
+.country-table{
+  background-color: var(--c-content-bg);
+  color: var(--c-secondary);
+}
+.paginator {
+  text-align: center;
+}
+
+.unstiled {
+  all: unset;
+  cursor: pointer;
+}

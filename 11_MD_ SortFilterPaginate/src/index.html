@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./assets/skeleton_css/normalize.css">
+    <link rel="stylesheet" href="./assets/skeleton_css/skeleton.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>My Country List</h1>
+            <div class = "search-form">
+                <div class="row">
+                    <div class="three columns">
+                        <label for=>
+                            Country
+                            <input class="u-full-width search-form__item" type="text" value="" id="name" placeholder="Country">
+                        </label>
+                    </div>
+                    <div class="three columns">
+                        <label for=>
+                            Capital
+                            <input class="u-full-width search-form__item" type="text" value="" id="capital" placeholder="Capital">
+                        </label>
+                    </div>
+                    <div class="three columns">
+                        <label for=>
+                            Currency
+                            <input class="u-full-width search-form__item" type="text" value="" id="currency.name" placeholder="Currency">
+                        </label>
+                    </div>
+                    <div class="three columns">
+                        <label for=>
+                            Language
+                            <input class="u-full-width search-form__item" type="text" value="" id="language.name" placeholder="Language">
+                        </label>
+                    </div>
+                </div>
+                <button class="button">Search</button>
+            </div>
+        </div>
+    </header>
+    <section class="section">
+        <div class="container">
+            <table class="u-full-width">
+                <thead>
+                  <tr class="sorters" >
+                    <th><button class="unstiled sorters__item" id="byName" value="name">Country</button></th>
+                    <th><button class="unstiled sorters__item" id="byCapital" value="capital">Capital</button></th>
+                    <th><button class="unstiled sorters__item" id="byCurrency" value="currency.name">Currency</button></th>
+                    <th><button class="unstiled sorters__item" id="byLanguage" value="language.name">Language</button></th>
+                  </tr>
+                </thead>
+                <tbody class="country-table">
+                </tbody>
+              </table>
+        </div>
+        <div class="container">
+            <div class="paginator">
+                <div class="paginator__buttons">
+                    <button class="button" value="previous">Previous</button>
+                    <button class="button" value="next">Next</button>
+                    <!-- <button class="button load_more" value="next">Loadmore</button> -->
+                </div>
+                <div class="paginator__location">
+                    <h3></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/scripts.js"></script>
+</body>
+</html>
