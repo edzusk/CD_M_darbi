@@ -8,7 +8,7 @@ let sortedLink = searchLink;
 let currentPage = 1;
 let maxPage = 1;
 
-const makeTableItem = (country:Country) => (
+const createTapleItem = (country:Country) => (
   `<tr class="country-table__item">
         <td>${country.name}</td>
         <td>${country.capital}</td>
@@ -21,7 +21,7 @@ const drawTable = (link: string) => {
   countryTable.innerHTML = '';
   axios.get<Country[]>(link).then((countries) => {
     countries.data.forEach((country) => {
-      countryTable.innerHTML += makeTableItem(country);
+      countryTable.innerHTML += createTapleItem(country);
     });
   });
 };
@@ -49,7 +49,7 @@ const pageChanger = () => {
       if (cahngePageEv === 'previous') {
         currentPage = currentPage === 1 ? maxPage : currentPage - 1;
       }
-      const linkToShow = `${searchLink}&_page=${currentPage}&_limit=20`;
+      const linkToShow = `${sortedLink}&_page=${currentPage}&_limit=20`;
       drawTable(linkToShow);
       location.innerHTML = `${currentPage}/${maxPage}`;
     });
@@ -122,7 +122,7 @@ const search = (link:string) => {
     let searchResult = `${link}`;
     searchAtributes.forEach((input) => {
       if (input.value) {
-        searchResult += `&${input.id}=${input.value}`;
+        searchResult += `&${input.id}_like=${input.value}`;
       }
     });
     searchLink = searchResult;
