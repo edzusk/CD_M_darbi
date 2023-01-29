@@ -20,15 +20,7 @@ export default class CarouselSuper extends CarouselExtendedExtended {
   fullscreenPrewiev() {
     this.carouselImages.forEach((image) => {
       image.addEventListener('click', () => {
-        if (image.requestFullscreen) {
-          image.requestFullscreen();
-        } else if (image.mozRequestFullScreen) {
-          image.mozRequestFullScreen();
-        } else if (image.webkitRequestFullscreen) {
-          image.webkitRequestFullscreen();
-        } else if (image.msRequestFullscreen) {
-          image.msRequestFullscreen();
-        }
+        image.requestFullscreen();
       });
     });
   }
