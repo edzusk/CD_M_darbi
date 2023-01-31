@@ -6,14 +6,39 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/bootsrapgrid.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>jQuery form</title>
 </head>
 <body>
-    <h1>
-        Hello World
-    </h1>
-    <img src="/assets/images/cat.jpeg" alt="" width="300">
+    
+    <header class="header">
+        <h1>Input form with jquery</h1>
+    </header>
+    <section class="section">
+        <div class="container">
+            
+            <form class="inputForm"  action="">
+                <label class="input_label" for="">
+                    Name:
+                    <input class="inputForm_Element js-name-input" type="text" placeholder="name">
+                    <span class="comment">The name must have at least 2 characters and can only contain letters. Max 50 character</span>
+                </label>
+                <label class="input_label" for="">
+                    Email:
+                    <input class="inputForm_Element js-email-input" type="text" placeholder="Email"> 
+                    <span class="comment">The email must be in a valid format (e.g. example@example.com).</span>
+                </label>
+                <label class="input_label" for="">
+                    Password:
+                    <input class="inputForm_Element js-password-input" type="text" placeholder="Password">
+                    <span class="comment">The password must be at least 8 characters long and must contain at least 1 number and 1 special character (!, @, #, $, %, ^, &, *).</span>
+                </label>
+                <button class="btn js-submit-form">Submit</button>
+            </form>
+        </div>
+    </section>
 
 
     <script src="/scripts.js"></script>
