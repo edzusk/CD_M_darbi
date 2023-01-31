@@ -4,6 +4,14 @@ import {
 } from './utils/validators/validators';
 
 $(document).ready(() => {
+  $('.comment').hide();
+
+  $('.inputForm_Element').focusin((e) => {
+    $(e.currentTarget).next('.comment').slideToggle();
+  });
+  $('.inputForm_Element').focusout((e) => {
+    $(e.currentTarget).next('.comment').slideToggle();
+  });
   $('.inputForm').submit((event) => {
     const name = $('.js-name-input').val();
     const email = $('.js-email-input').val();
