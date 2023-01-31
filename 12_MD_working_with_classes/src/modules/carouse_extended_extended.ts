@@ -13,7 +13,6 @@ export default class CarouselExtendedExtended extends CarouselExtended {
     this.rootElement.appendChild(this.createThumbnailList());
     this.rootElement.appendChild(carouselNavigation);
     this.getActiveThumbnail();
-    this.updateAfterClick();
   }
   createThumbnailList() {
     const thumbnailList = document.createElement('div');
@@ -26,12 +25,18 @@ export default class CarouselExtendedExtended extends CarouselExtended {
     });
     return thumbnailList;
   }
-  updateAfterClick() {
-    this.nextButton.addEventListener('click', () => this.getActiveThumbnail());
-    this.prevButton.addEventListener('click', () => this.getActiveThumbnail());
-		this.navBullets.forEach((el) => {
-      el.addEventListener('click', () => this.getActiveThumbnail());
-    });
+
+  handleBuletClick(index:number) {
+    super.handleBuletClick(index);
+    this.getActiveThumbnail();
+  }
+  handleNextClick(): void {
+    super.handleNextClick();
+    this.getActiveThumbnail();
+  }
+  handlePrevClick(): void {
+    super.handlePrevClick();
+    this.getActiveThumbnail();
   }
 
   getActiveThumbnail() {

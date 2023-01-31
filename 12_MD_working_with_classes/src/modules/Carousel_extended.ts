@@ -14,7 +14,7 @@ export default class CarouselExtended extends Carousel {
 
   addNavigation() {
     this.rootElement.appendChild(this.addNavElements());
-    this.extendedOpt();
+    // this.extendedOpt();
   }
   createBulets() {
     const bullet = <HTMLDivElement>document.createElement('div');
@@ -28,11 +28,15 @@ export default class CarouselExtended extends Carousel {
     this.carouselElements.forEach(() => navigation.appendChild(this.createBulets()));
     return navigation;
   }
-
-  extendedOpt() {
-    this.nextButton.addEventListener('click', () => this.getActiveBullet());
-    this.prevButton.addEventListener('click', () => this.getActiveBullet());
+  handleNextClick(): void {
+    super.handleNextClick();
+    this.getActiveBullet();
   }
+  handlePrevClick(): void {
+    super.handlePrevClick();
+    this.getActiveBullet();
+  }
+
   getActiveBullet() {
     this.navBullets.forEach((el, i) => {
       if (i === this.curCarouselElement) {
@@ -51,10 +55,13 @@ export default class CarouselExtended extends Carousel {
   enableNav() {
     this.navBullets.forEach((el, i) => {
       el.addEventListener('click', () => {
-        this.curCarouselElement = i;
-        this.replaceElements();
-        this.getActiveBullet();
+        this.handleBuletClick(i);
       });
     });
+  }
+  handleBuletClick(index:number) {
+    this.curCarouselElement = index;
+    this.replaceElements();
+    this.getActiveBullet();
   }
 }

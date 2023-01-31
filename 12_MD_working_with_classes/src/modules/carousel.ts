@@ -12,6 +12,7 @@ export default class Carousel {
     this.rootElement = document.querySelector(selector);
     this.carouselElements = this.rootElement.querySelectorAll<HTMLDivElement>('.carousel__element');
     this.carouselImages = this.rootElement.querySelectorAll<HTMLImageElement>('.image');
+    this.curCarouselElement = 0;
     this.nextButton = this.rootElement.querySelector('.js-nextBtn');
     this.prevButton = this.rootElement.querySelector('.js-prevBtn');
     this.lastElement = this.carouselElements.length - 1;
@@ -23,16 +24,22 @@ export default class Carousel {
       (<HTMLDivElement>el).style.transform = `translateX(${i * 100}%)`;
     });
     this.nextButton.addEventListener('click', () => {
-      this.moveElementsForvard();
-      this.replaceElements();
+      this.handleNextClick();
     });
 
     this.prevButton.addEventListener('click', () => {
-      this.moveElementsBack();
-      this.replaceElements();
+      this.handlePrevClick();
     });
   }
+  handleNextClick() {
+    this.moveElementsForvard();
+    this.replaceElements();
+  }
 
+  handlePrevClick() {
+    this.moveElementsBack();
+    this.replaceElements();
+  }
   moveElementsBack() {
     if (this.curCarouselElement === 0) {
       this.curCarouselElement = this.lastElement;
