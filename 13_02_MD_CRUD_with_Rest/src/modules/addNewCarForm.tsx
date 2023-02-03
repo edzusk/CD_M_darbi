@@ -25,7 +25,12 @@ const  AddNewCarForm = () => {
         <h2 className="headding title is-3">
             Add new car
         </h2>
-        <form className="newCar" onSubmit={() => handleSubmitNew()} action="">
+        <form className="newCar" 
+        onSubmit={(e) => {
+            handleSubmitNew();
+            // e.preventDefault()
+        }} 
+        action="">
             <div className="field">
                 <label className="label">Name</label>
                 <div className="control">

@@ -7,12 +7,12 @@ import host from './host';
 import EditCarForm from './editCard';
 
 function GenerateCards() {
-  const [Carlist, updateCarlist] = useState<Car[]>([]);
+  const [Carlist, setCarlist] = useState<Car[]>([]);
   const [selectedCarId, setSelectedCarId] = useState<number | null>(null);
   
   const getCarlist =  () => {
     axios.get(host).then(({data}) => {
-      updateCarlist(data)
+      setCarlist(data)
       console.log('doing something');
     })
   };
