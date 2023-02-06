@@ -3,7 +3,7 @@ import Button from "./inputs_buttons/button";
 import { useRef } from "react";
 
 const GoldenDiv = () => {
-	const boxRef = useRef<HTMLDivElement>(null);
+	const boxRef = useRef<React.MutableRefObject<HTMLDivElement | null>(null);
 
 	const handleclick = () => {
 		boxRef.current.style.backgroundColor = "gold"

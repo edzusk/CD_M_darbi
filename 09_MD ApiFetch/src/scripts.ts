@@ -1,6 +1,6 @@
 import {
   addCard, nextPrevious, pageContent, pagenumber,
-} from './constants';
+} from './constants.ts';
 
 let page = 1;
 

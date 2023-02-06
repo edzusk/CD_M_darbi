@@ -1,0 +1,66 @@
+.cardWrapper {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--c-bg-main);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    margin-bottom: 20px;
+
+}
+
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.cardHedding{
+    font-size: 1.5rem;
+}
+.cardText {
+    
+}
+.trafficLightGreen {
+    margin-left: 10px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: greenyellow;
+}
+.trafficLightRed {
+    margin-left: 10px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: red;
+}
+.trafficLightYellow {
+    margin-left: 10px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.cardButton {
+    padding: 10px 20px;
+    background-color: var(--c-accent-primary);
+    color: var(--c-text);
+    font-size: 1.5rem;
+    border: 2px solid var(--c-accent-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover{
+        transition: 0.3s;
+        background-color: var(--c-accent-secondary);
+
+        border: 2px solid var(--c-accent-primary);
+
+    }
+}

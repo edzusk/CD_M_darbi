@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+  --c-bg-body: #3d373c;
+  --c-text: #E7E0Db;
+  --c-bg-main:#377385;
+  --c-border-primary: #2F9331;
+  --C-comment:#926F44;
+  --c-accent-primary:#8BCF21;
+  --c-accent-secondary: #FB6467FF;
+}
+
+body{
+    background-color: var(--c-bg-body);
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+  }

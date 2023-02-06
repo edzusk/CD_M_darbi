@@ -1,0 +1,18 @@
+
+.nav {
+    list-style-type: none;
+    color: var(--c-text);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+}
+.navEl {
+    text-decoration: none;
+    color: var(--c-text);
+    font-size: 2rem;
+}
+.navEl:hover {
+    transition: 0.2s;
+    text-decoration: underline;
+    color: var(--c-accent-primary);
+}
