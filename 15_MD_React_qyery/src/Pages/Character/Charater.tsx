@@ -29,11 +29,6 @@ const Character = () => {
         <div className="container">
             <div>{JSON.stringify(postQuery.data.id)}</div>
             <Card {...postQuery.data}/>
-            {/* {postQuery.data.map(card => (
-          <div key={card.id} className="col-4">
-            <Card key={card.id} {...card}/>
-          </div>
-        ))} */}
         </div>
     )
 
