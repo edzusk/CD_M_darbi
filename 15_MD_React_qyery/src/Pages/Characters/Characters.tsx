@@ -3,15 +3,16 @@ import axios from 'axios'
 import { useQuery, useMutation, } from '@tanstack/react-query'
 import Card from '../../components/Card/Card'
 import { useNavigate } from 'react-router-dom'
+import ThumbnailCard from '../../components/ThumbnailCard/ThumbnailCard'
 
 
 const Characters =() => {
 
   const navigate = useNavigate();
-  const postQuery =  useQuery({
+  const postQuery =  useQuery <CardProps[]>({
     queryKey: ['cards'],
     queryFn: async () => {
-      const response = await axios.get<{results: CardProps[]}>('https://rickandmortyapi.com/api/character');
+      const response = await axios.get('https://rickandmortyapi.com/api/character');
       return response.data.results;
     }
   })
@@ -35,8 +36,8 @@ const Characters =() => {
       <div className="row">
         
         {postQuery.data.map(card => (
-          <div key={card.id} className="col-4">
-            <Card onLoadMore={handleClick}  key={card.id} {...card}/>
+          <div key={card.id} className="col-3">
+            <ThumbnailCard onLoadMore={handleClick}  key={card.id} {...card}/>
           </div>
         ))}
       </div>

@@ -20,16 +20,12 @@ type CardProps = {
     episode: string[],
     url: string,
     created: string
-    onLoadMore?: (id:number)=> void
 }
 
 
 
 const Card = (cardProps : CardProps) => {
 
-    const handleClick= (id:number) => {
-        cardProps.onLoadMore ? cardProps.onLoadMore(id) : console.log('click');
-    }
     const isAlive = (status:string) => {
         if (status === 'Alive') {
             return styles.trafficLightGreen
@@ -52,13 +48,7 @@ const Card = (cardProps : CardProps) => {
                 <p>{cardProps.gender}</p>
                 <p>origin: {cardProps.origin.name}</p>
                 <p>last known location: {cardProps.location.name}</p>
-                <button className={styles.cardButton}
-                onClick={(e) => {
-                    e.preventDefault()
-                    handleClick(cardProps.id);
-                    }}>
-                        Load More
-                </button>
+
             </div>
         </div>
     )

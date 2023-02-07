@@ -9,7 +9,7 @@ const Character = () => {
     const { id } = useParams();
 
     const postQuery =  useQuery<CardProps>({
-        queryKey: ['Card'],
+        queryKey: ['Card', id],
         queryFn: async () => {
           const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
           console.log(id)
@@ -17,7 +17,6 @@ const Character = () => {
           return response.data;
         }
       })
-    
     
       if (postQuery.isLoading) {
         return <h1>Loading...</h1>
@@ -27,7 +26,6 @@ const Character = () => {
       }
     return (
         <div className="container">
-            <div>{JSON.stringify(postQuery.data.id)}</div>
             <Card {...postQuery.data}/>
         </div>
     )
