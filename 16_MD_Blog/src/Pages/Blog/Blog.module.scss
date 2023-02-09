@@ -1,0 +1,50 @@
+.blogWrapper {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: var(--bs-gray-500);
+    padding: 20px;
+    border-radius: 20px;
+    gap:20px;
+}
+
+.blogContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+}
+
+.blogImage {
+    width: 100%;
+}
+
+.blogHeadding{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.commentWrapper{
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 75px auto;
+    width: 100%;
+    background-color: var(--bs-gray-500);
+    padding: 20px;
+    border-radius: 20px;
+}
+.comentAvatar {
+    height: 50px;
+    width:  50px;
+    border-radius: 50%;
+}
+.commentConntent{
+
+}
+.commentAuthor {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
