@@ -42,7 +42,7 @@ const App = () => {
     <section className='part1'>
       <div className="container">
         <h2>part-3</h2>
-        <GoldenDiv/>
+        {/* <GoldenDiv/> */}
       </div>
       <div className="container">
         <h2>part-3</h2>

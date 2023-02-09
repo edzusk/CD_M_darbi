@@ -7,7 +7,7 @@ const Header = () => {
     const navigate = useNavigate()
 
     const handleclick = () =>{
-        navigate('/new_post')
+        navigate('/addBlog/')
     }
 
     return(
@@ -18,7 +18,7 @@ const Header = () => {
                         <Link className={style.navEl} to='/'> Home</Link>
                         <Link className={style.navEl} to='blog/'>Blog {}</Link>
                     </div>
-                <Button children="Add post"/>
+                <Button onClick={handleclick} children="Add post"/>
                 </nav>
             </div>
         </section>

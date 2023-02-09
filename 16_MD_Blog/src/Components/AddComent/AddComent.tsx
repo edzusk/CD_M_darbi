@@ -55,7 +55,7 @@ const AddComent = ({onSubmit}:AddComentProps) => {
             cols={30}
             rows={10}
           ></textarea>
-          <Button onClick={handleSubmit} children={'Add comment'}/>
+          <Button type={'submit'} children={'Add comment'}/>
         </form>
       </div>
   );

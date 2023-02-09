@@ -11,7 +11,9 @@ const Home = () => {
 
 
   return (
-    <h1>HOMESCREEN</h1>
+    <div className="container">
+      <img width={'100%'} src="https://media.discordapp.net/attachments/1008571067398369291/1073196773956386866/330237642_1450394915500332_5730713801683318348_n.jpg?width=1784&height=967" alt="" />
+    </div>
   )
 };
 

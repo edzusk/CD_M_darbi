@@ -10,7 +10,7 @@ type TextInputProps = {
   required?: boolean;
 };
 
-const TextInput = ({
+const TextInputArea = ({
   placeholder,
   onChange,
   value,
@@ -22,16 +22,13 @@ const TextInput = ({
   };
 
   return (
-    <input
-      type="text"
-      required={required}
-      autoFocus={inFocus}
-      placeholder={placeholder}
-      onChange={(e) => handleOnchange(e.target.value)}
-      value={value}
-      className={style.textInput}
-    />
+    <textarea required={required} 
+    onChange={(e) => handleOnchange(e.target.value)}
+    placeholder={placeholder}
+    value={value}
+    className={style.textInput}
+    name="" id="" cols={30} rows={10}></textarea>
   );
 };
 
-export default TextInput;
+export default TextInputArea;

@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import Blog from './Pages/Blog/Blog';
 import Header from './Components/Header/Header';
 import Blogs from './Pages/Blogs/Blogs';
+import AddBlog from './Pages/AddBlog/AddBlog';
 
 const queryClient = new QueryClient()
 
@@ -22,6 +23,7 @@ const  App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/blog/" element={<Blogs/>} />
       <Route path="/blog/:id" element={<Blog/>} />
+      <Route path="/addBlog/" element={<AddBlog/>} />
     </Routes>
     </QueryClientProvider>
     </>

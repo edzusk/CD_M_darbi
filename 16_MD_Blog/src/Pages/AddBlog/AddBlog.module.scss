@@ -1,0 +1,21 @@
+.Formwrapper {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.formLabel {
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+.imageprevievwrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.prwviewImage {
+    width: 100%;
+    background-color: lightgray;
+    max-height: 300px;
+    object-fit: cover;
+}
