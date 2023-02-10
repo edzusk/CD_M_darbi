@@ -6,6 +6,8 @@ import TextInputArea from '../../Components/inputs_buttons/TextInputArea'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AddBlog = () => {
@@ -16,19 +18,19 @@ const AddBlog = () => {
 
   const handleSubmit = () => {
     const newPost : any = {title, image, content};
-
     mutation.mutate(newPost);
     setTitle("");
     setimage("");
     setContent("");
-    // navigate('/blog')
-
 };
+
 const mutation = useMutation({
     mutationFn: (newPost) => {
         return axios.post('http://localhost:3004/blog', newPost);
     },
     onSuccess: ({data}) => {
+      toast("Post added!");
+      setTimeout(() => navigate(`/blog/${data.id}`), 3000)
       navigate(`/blog/${data.id}`)
     },
 });
@@ -78,6 +80,7 @@ if (mutation.isError) return <h1>An error has occurred.</h1>;
           placeholder={"Blooog"}
         />
         <Button type={"submit"} children={"Add post"} />
+        <ToastContainer autoClose={5000} theme="dark" position="top-center" hideProgressBar={false}/>
       </form>
     </div>
   );

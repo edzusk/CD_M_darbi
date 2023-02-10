@@ -2,7 +2,7 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
+
     background-color: var(--bs-gray-500);
     padding: 20px;
     border-radius: 20px;
@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: space-evenly;
     font-size: 1.3rem;
+    position: relative;
 }
 
 .blogImage {
@@ -30,8 +31,7 @@
 .commentWrapper{
     margin: 10px 0;
     display: grid;
-    grid-template-columns: 75px auto;
-    width: 100%;
+    grid-template-columns: 75px auto 120px;
     background-color: var(--bs-gray-500);
     padding: 20px;
     border-radius: 20px;
@@ -47,4 +47,32 @@
 .commentAuthor {
     font-size: 1.2rem;
     text-transform: capitalize;
+}
+.comentDeleteBtn {
+    padding: 10px;
+    border-radius: 50%;
+    justify-self: flex-end;
+    align-self: center;
+    border: 2px solid var(--bs-primary);
+    background-color: var(--bs-danger);
+    color: var(--bs-light);
+    font-weight: 900;
+    cursor: pointer;
+
+    &:hover {
+        scale: 1.1;
+    }
+}
+.editLink {
+    text-decoration: none;
+    color: var(--bs-light);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    &:hover {
+        transition: 0.2s;
+        color: var(--bs-danger);
+        text-decoration: underline;
+        scale: 1.1;
+    }
 }

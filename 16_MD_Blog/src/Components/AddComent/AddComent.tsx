@@ -14,7 +14,6 @@ const AddComent = ({onSubmit}:AddComentProps) => {
 
   const handleSubmit = () => {
     onSubmit ? onSubmit(author, content, avatar) : console.log("comented");
-    // console.log({author, content, avatar})
     setAuthor("");
     setComment("");
     setImageLink("");

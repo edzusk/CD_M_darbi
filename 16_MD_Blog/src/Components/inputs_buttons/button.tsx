@@ -7,7 +7,7 @@ type ButtonProps = {
     type? : 'submit' | 'button'
 } 
 
-const Button = ({children, onClick, isDisabled, type='button'} : ButtonProps) => {
+const Button = ({children, onClick, isDisabled, type='submit'} : ButtonProps) => {
     
     const handleClick= () => {
         onClick ? onClick() : console.log('click')
