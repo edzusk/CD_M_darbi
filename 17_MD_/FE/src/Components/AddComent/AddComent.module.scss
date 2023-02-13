@@ -1,0 +1,31 @@
+.addCommentWrapper {
+    padding: 20px 0;
+    // border: 2px solid var(--bs-primary);
+    // border-radius: 5px;
+}
+
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.input {
+    padding: 5px;
+    outline: none;
+    border: 2px solid var(--bs-primary);
+    border-radius: 5px;
+    margin-right: 10px;
+    
+}
+
+.inputarea{
+    width: 100%;
+    flex-grow: 1;
+    padding: 5px;
+    outline: none;
+    border: 2px solid var(--bs-primary);
+    border-radius: 5px;
+}

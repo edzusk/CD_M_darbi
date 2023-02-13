@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Post from "../../Components/Types";
+import host from "../../Components/host";
 
 import TextInput from "../../Components/inputs_buttons/TextInput";
 import TextInputArea from "../../Components/inputs_buttons/TextInputArea";
@@ -13,7 +14,7 @@ import Button from "../../Components/inputs_buttons/button";
 import axios from "axios";
 
 const getPostData = async (id: string) => {
-  const { data } = await axios.get<Post>(`http://localhost:3004/blog/${id}`);
+  const { data } = await axios.get<Post>(`${host}/posts/${id}`);
   return data;
 };
 
@@ -34,14 +35,15 @@ const EditBlog = () => {
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const newPostData: any = { title, content, image };
+    // const newPostData: any = { title, content, image };
+    const newPostData: any = { title, content };
     e.preventDefault();
     editMutation.mutate(newPostData);
   };
 
   const editMutation = useMutation({
     mutationFn: (newPostData) => {
-      return axios.put(`http://localhost:3004/blog/${id}`, newPostData);
+      return axios.put(`${host}/editpost/${id}`, newPostData);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["post"]);
@@ -78,7 +80,7 @@ const EditBlog = () => {
               <TextInput
                 onChange={setimage}
                 value={image}
-                required={true}
+                required={false}
                 placeholder={"https://...."}
               />
               Image Link

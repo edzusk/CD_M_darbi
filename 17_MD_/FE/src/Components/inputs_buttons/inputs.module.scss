@@ -1,0 +1,31 @@
+.btn {
+    font-size: 1.3rem;
+    min-width: 120px;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--bs-primary);
+
+    &:hover {
+    background-color: var(--bs-warning);
+    }
+    &:active {
+    background-color: var(--bs-success);
+    }
+    &:disabled {
+    background-color: var(--bs-secondary);
+    }
+}
+
+.textInput {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-color: var(--bs-primary);
+    outline: none;
+    margin: 10px;
+    &:focus {
+    border: 2px solid var(--bs-warning);
+    scale: 1.05;
+    }
+}
