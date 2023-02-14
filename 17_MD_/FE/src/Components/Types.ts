@@ -2,7 +2,7 @@ type Post = {
     id: number,
     title : string,
     content : string,
-    image: string,
+    image_link: string,
     comments: Comments[]    
 }
 
@@ -11,7 +11,7 @@ export type Comments = {
     id: number
     author: string,
     content: string,
-    avatar: string
+    image_link: string
 }
 
 export default Post

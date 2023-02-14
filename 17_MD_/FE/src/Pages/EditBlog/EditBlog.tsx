@@ -27,10 +27,10 @@ const EditBlog = () => {
   const [image, setimage] = useState("");
 
   useEffect(() => {
-    getPostData(id!).then(({ title, content, image }) => {
+    getPostData(id!).then(({ title, content, image_link }) => {
       setTitle(title);
       setContent(content);
-      setimage(image);
+      setimage(image_link);
     });
   }, []);
 
@@ -76,15 +76,16 @@ const EditBlog = () => {
               />
               Post title
             </label>
-            <label className={style.formLabel} htmlFor="">
+            {/* <label className={style.formLabel} htmlFor="">
               <TextInput
                 onChange={setimage}
+                
                 value={image}
                 required={false}
                 placeholder={"https://...."}
               />
               Image Link
-            </label>
+            </label> */}
           </div>
           <img className={style.prwviewImage} src={image} alt="" />
         </div>

@@ -29,9 +29,10 @@ const Blogs = () => {
   <>
   <div className="container">
     <div className={style.cardWrapper}>
-      {data.map( (post)=>(
-        <BlogCard key={post.id} {...post}  />
-      ))}
+      {data.map( (post)=>{
+        return <BlogCard key={post.id} {...post}  />
+      }
+      )}
     </div>
   </div>
   </>

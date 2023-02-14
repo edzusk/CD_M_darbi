@@ -7,6 +7,7 @@ import mysql from "mysql2";
 import { error } from "console";
 import multer from "multer";
 
+// TODO input verification!!!!
 type Post = {
   id: number;
   title: string;
@@ -30,6 +31,7 @@ const app = express();
 
 app.use(bodyparser.json());
 app.use(cors({ origin: "*" }));
+app.use("/static", express.static("public"));
 
 app.listen(3005, () => {
   console.log("Application started on port 3005!");
@@ -78,17 +80,7 @@ app.put(`/editpost/:id`, (req: Request<any, null, PostBody>, res: Response) => {
   );
 });
 //-------------------------------
-// Set up the multer storage
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, "./uploads");
-//   },
-//   filename: function (req, file, cb) {
-//     cb(null, file.fieldname + "-" + Date.now());
-//   },
-// });
-
-// const upload = multer({ storage: storage });
+// ADD New POST including post image upload
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public/");
@@ -97,27 +89,26 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
+
 const upload = multer({ storage });
 
-//Add new post to DB
 app.post(
   `/new/`,
-  upload.single("photo"),
-  (req: Request<null, null, PostBody>, res: Response) => {
+  upload.single("image"),
+  (req: Request<any, null, PostBody>, res: Response) => {
     const newTitle = req.body.title;
     const newContent = req.body.content;
-    const image = req.body.image;
-    if (!newTitle || !newContent) {
-      res.send("fill all fields");
-    }
-    // Define a location to save the uploaded file
-    const imagePath = `./public/${image.name}`;
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const imagePath = `http://localhost:3005/static/${req.file.filename}`;
+    console.log(imagePath);
 
     connection.query(
-      `INSERT INTO posts (title,content, image) VALUES ('${newTitle}','${newContent}', '${imagePath}')`,
-      function (err, data) {
+      `INSERT INTO posts (title,content, image_link) VALUES ('${newTitle}','${newContent}', '${imagePath}')`,
+      function (err, data, result) {
         if (err) throw err;
-        res.send({ success: true });
+        res.send(result);
       }
     );
   }
@@ -139,7 +130,8 @@ app.get(`/posts/:id/comments`, (req: Request, res: Response) => {
 });
 
 // Add new comment to DB
-app.put(
+//TODO  get rid of ANY
+app.post(
   `/posts/newcoment/:id`,
   (req: Request<any, null, CommentBody>, res: Response) => {
     const post_id: string = req.params.id;

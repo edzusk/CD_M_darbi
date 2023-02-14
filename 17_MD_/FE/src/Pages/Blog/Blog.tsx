@@ -23,7 +23,6 @@ const Blog = () => {
   const queryClient = useQueryClient()
   const { id } = useParams();
   
-  // console.log(id);
 
   const { data : dataPost, isError: isErrorPost, isLoading: isLoadingPost, } = useQuery<Post>(["post", id], () =>
     getPost(id!)
@@ -34,9 +33,9 @@ const Blog = () => {
     getPost(`${id!}/comments`)
   );
   
-  const handleSubmit = (author:string, content:string, avatar:string) => {
+  const handleSubmit = (author:string, content:string, image_link:string) => {
     const blogId = Number(id)
-    const newComment: NewComment | any = {author, content, avatar, blogId }
+    const newComment: NewComment | any = {author, content, image_link, blogId }
     mutationAdd.mutate(newComment);
 };
 
@@ -80,7 +79,7 @@ if (mutationAdd.isError) return <h1>An error has occurred.</h1>;
   return (
     <div className="container">
       <div className={style.blogWrapper}>
-        {/* <img className={style.blogImage} src={dataPost?.image} alt={`${dataPost?.title} image`} /> */}
+        <img className={style.blogImage} src={dataPost?.image_link} alt={`${dataPost?.title} image`} />
         <div className={style.blogContent}>
         <Link to={`http://localhost:5173/editBlog/${id}`} className={style.editLink}>edit</Link>
           <h2 className={style.blogHeadding}>{dataPost?.title}</h2>
@@ -88,9 +87,9 @@ if (mutationAdd.isError) return <h1>An error has occurred.</h1>;
 
         </div>
       </div>
-      {dataComments.map(({id, author, avatar, content}) => (
+      {dataComments.map(({id, author, image_link, content}) => (
         <div key={id} className={style.commentWrapper}>
-          <img className={style.comentAvatar} src={avatar} alt="" />
+          <img className={style.comentAvatar} src={image_link} alt="" />
           <div className={style.commentConntent}>
             <h3 className={style.commentAuthor}>{author}</h3>
             <p>{content}</p>

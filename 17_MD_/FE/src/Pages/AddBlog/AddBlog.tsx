@@ -20,11 +20,12 @@ const AddBlog = () => {
   const navigate = useNavigate()
   const [title, setTitle] = useState("");
   const [image, setImage] = useState<any>(null);
+  const [imageLink, setImageLink] = useState<any>(null);
   const [content, setContent] = useState("");
 
   const handleSubmit = () => {
-    // const newPost : any = {title, image, content};
-    const newPost : any = {title, content};
+    const newPost : any = {title, image, content};
+    // const newPost : any = {title, content};
     mutation.mutate(newPost);
     setTitle("");
     // setimage("");
@@ -35,33 +36,24 @@ const mutation = useMutation({
    
     mutationFn: (newPost:NewPostbody) => {
       const formData = new FormData();
-      const imageBlob = new Blob([image as BlobPart], { type: 'image/jpeg' });
       formData.append('title', newPost.title);
       formData.append('content', newPost.content);
-      formData.append('image', imageBlob, image.name);
-      return axios.post(`${host}/new/`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
+      const file = new File([newPost.image], newPost.image.name)
+      formData.append('image', file);
+      return axios.post(`${host}/new/`,  formData, { headers: { 'Content-Type': 'multipart/form-data' } });
     },
 
-
     onSuccess: ({data}) => {
+      console.log(data)
       toast("Post added!");
-      setTimeout(() => navigate(`/blog/${data.id}`), 3000)
+      // setTimeout(() => navigate(`/blog/${data.id}`), 3000)
       // navigate(`/blog/${data.id}`)
     },
 });
 
 
-
-
-
-
-
-
 if (mutation.isLoading) return <h1>Adding...</h1>;
 
-// if (error) return 'An error has occurred: ' + error.message;
 if (mutation.isError) return <h1>An error has occurred.</h1>;
 
   return (
@@ -85,20 +77,12 @@ if (mutation.isError) return <h1>An error has occurred.</h1>;
               />
               Post title
             </label>
-            {/* <label className={style.formLabel} htmlFor="">
-              <TextInput
-                onChange={setimage}
-                value={image}
-                required={false}
-                placeholder={"https://...."}
-              />
-              Image Link
-            </label> */}
             <label className={style.fileUpload}  htmlFor="actual-upload">
             <input className={style.hidden} hidden 
             onChange={(e) => {
               if (e.target.files instanceof FileList) {
-                setImage(URL.createObjectURL(e.target.files[0]));
+                setImage(e.target.files[0]);
+                setImageLink(URL.createObjectURL(e.target.files[0]));
               }
             }}
             type="file" name="" 
@@ -106,7 +90,7 @@ if (mutation.isError) return <h1>An error has occurred.</h1>;
             Choose post image
             </label>
           </div>
-          <img className={style.prwviewImage} src={image} alt="" />
+          <img className={style.prwviewImage} src={imageLink} alt="" />
         </div>
         <TextInputArea
           onChange={setContent}
