@@ -25,9 +25,10 @@ const Header = ({lng, onLngChange, player}: HeaderProps) => {
         <Link className="navigation__element" to={gamelink}>{t('game')}</Link>
         <Link className="navigation__element" to={resultsLink}>{t('results')}</Link>
         <Link className="navigation__element" to={'/about'}>{t('about')}</Link>
-        <select name="language"
+        <select className="languageDrop" name="language"
         onChange={(e) => handlechange(e)}
         id="">
+          <option value="">{t("language")}</option> //??? probaly not needed
           <option value="en">English</option>
           <option value="lv">Latviešu</option>
           <option value="es">Español</option>

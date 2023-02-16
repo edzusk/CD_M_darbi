@@ -126,16 +126,8 @@ app.post('/results/:name', (req:Request<{[key:string]:string}, null, Results>, r
   })
 })
 
-//get all results
-app.get('/results', (req:Request, res:Response) => {
-  con.query(`SELECT * from results`, (error, results, fields) => {
-    if (error) {
-      res.send(error)
-    }
-    res.send(results)
-  })
-})
-//get all players
+
+//get all players and results
 app.get('/user-results', (req:Request, res:Response) => {
   con.query(`SELECT results.games,
   results.wins,
@@ -143,7 +135,8 @@ app.get('/user-results', (req:Request, res:Response) => {
   results.tie,
   results.streak,
   users.name FROM results
-  JOIN users ON results.user_id = users.id`, 
+  JOIN users ON results.user_id = users.id
+  ORDER BY results.wins DESC`, 
   (error, results, fields) => {
     if (error) {
       res.send(error)

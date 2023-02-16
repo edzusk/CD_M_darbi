@@ -15,6 +15,7 @@ const translationEn = {
   gamesDraw: 'Draws',
   currentstreak: 'Win streak',
   streak: "Longest streak",
+  language: "language"
 }
 const translationLv = {
   home: 'Sākums',
@@ -33,6 +34,7 @@ const translationLv = {
   gamesDraw: 'Neizšķirti',
   currentstreak: 'Uzvaras pēc kārtas',
   streak: "Visvairāk uzvaras pēc kārtas",
+  language: "valod"
 }
 const translationEs = {
   home: 'Hogar',
@@ -51,6 +53,7 @@ const translationEs = {
   gamesDraw: 'empatado',
   currentstreak: 'Racha',
   streak: "racha de victorias más larga",
+  language: "idioma",
 }
 
 
