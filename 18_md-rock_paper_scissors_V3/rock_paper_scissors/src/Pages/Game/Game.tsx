@@ -16,23 +16,9 @@ import {
   host,
   getResults,
   updateScore,
-  // handleLost,
-  // handleTie,
   Results } from '../../assets/gameElements';
 import { useQuery } from 'react-query';
 
-i18n
-  .use(initReactI18next) // bind react-i18next to the instance
-  .init({
-    resources: {
-      en : { translation : translationEn},
-      lv : { translation : translationLv},
-      es : { translation : translationEs}
-    },
-    lng : "en",
-    fallbackLng: "en",
-    interpolation: { escapeValue : false },
-  });
 
 type GameProps = {
   lng:string
@@ -86,8 +72,8 @@ const Game = ({lng}:GameProps) => {
         toast.success('🦄 WIN!');
         setWins(wins +1)
         setCurrentStreak(currentStreak + 1)
-        if (currentStreak > streak) {
-          setStreak(currentStreak)
+        if (streak <= currentStreak) {
+          setStreak(currentStreak + 1)
         }
     }else {
       toast.error('🦄 LOST!');

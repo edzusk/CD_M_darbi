@@ -4,6 +4,7 @@ import { Request, Response } from "express";
 import bodyparser from "body-parser";
 import cors from "cors";
 import mysql from "mysql2"
+import { error } from "console";
 
 type Player = {
   name: string,
@@ -78,7 +79,6 @@ app.post('/player', (req: Request<null, null, Player>, res: Response) => {
   )
 })
 
-
 //Get player results
 app.get('/results/:name', (req:Request, res:Response) => {
   const name = req.params.name
@@ -126,3 +126,28 @@ app.post('/results/:name', (req:Request<{[key:string]:string}, null, Results>, r
   })
 })
 
+//get all results
+app.get('/results', (req:Request, res:Response) => {
+  con.query(`SELECT * from results`, (error, results, fields) => {
+    if (error) {
+      res.send(error)
+    }
+    res.send(results)
+  })
+})
+//get all players
+app.get('/user-results', (req:Request, res:Response) => {
+  con.query(`SELECT results.games,
+  results.wins,
+  results.loses,
+  results.tie,
+  results.streak,
+  users.name FROM results
+  JOIN users ON results.user_id = users.id`, 
+  (error, results, fields) => {
+    if (error) {
+      res.send(error)
+    }
+    res.send(results)
+  })
+})

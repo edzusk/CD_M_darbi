@@ -13,7 +13,7 @@ import About from './Pages/About/About';
 import Game from './Pages/Game/Game';
 import Header from './Modules/Header/Header';
 import {translationEn, translationEs, translationLv} from './assets/translations'
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 
@@ -32,10 +32,17 @@ i18n
   const queryClient = new QueryClient()
 
 const  App = () =>  {
-  const [lang, setlng] = useState('en')
-  const [playername, setPlayerName] =  useState('');
+  const [lang, setlng] = useState(localStorage.getItem('lang') || 'en');
+  const [playername, setPlayerName] =  useState(localStorage.getItem('playername') || '');;
+
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+    i18n.changeLanguage(lang)
+    localStorage.setItem('playername', playername);
+  }, [lang, playername]);
+
+
   const selectLng = (lng : string) => {
-    console.log('changing?')
     i18n.changeLanguage(lng)
     setlng(lng)
   }

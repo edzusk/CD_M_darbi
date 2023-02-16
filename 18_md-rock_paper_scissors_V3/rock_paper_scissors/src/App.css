@@ -1,5 +1,6 @@
 :root {
   --c-body: #242424;
+  --c-lightgrey: #6665657d;
   --c-main: #ffffff;
   --c-effect: #7fffd4;
 }
@@ -139,4 +140,21 @@ body {
 }
 .name{
   font-weight: 700;
+}
+
+.resultsTable {
+  width: 100%;
+}
+.resultsTable__row {
+  border: 1px solid;
+}
+.resultsTable__row--heddings {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.cell {
+  background-color: var(--c-lightgrey);
+  padding: 5px;
+  border: 1px dashed;
 }

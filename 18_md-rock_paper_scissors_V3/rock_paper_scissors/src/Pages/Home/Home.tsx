@@ -8,21 +8,6 @@ import axios from "axios";
 import { host } from "../../assets/gameElements";
 
 
-
-i18n
-  .use(initReactI18next) // bind react-i18next to the instance
-  .init({
-    resources: {
-      en : { translation : translationEn},
-      lv : { translation : translationLv},
-      es : { translation : translationEs}
-    },
-    lng : "en",
-    fallbackLng: "en",
-    interpolation: { escapeValue : false },
-  });
-
-
 type HomeProps = {
   lng:string
   setPlayername: (name:string) => void;
