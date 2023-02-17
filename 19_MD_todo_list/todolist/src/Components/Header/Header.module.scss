@@ -1,0 +1,47 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: darkcyan;
+}
+
+.navElem {
+    list-style: none
+}
+
+.navButton {
+    padding: 10px 20px;
+    outline: none;
+    border: 3px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(49, 55, 57);
+    color: white;
+
+}
+.textInput {
+    padding: 10px 20px;
+    outline: none;
+    border: 3px solid orange;
+    border-radius: 10px;
+    background-color: rgb(49, 55, 57);
+    color: white;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+.select {
+    padding: 10px 20px;
+    outline: none;
+    border: 3px solid orange;
+    border-radius: 10px;
+    background-color: rgb(49, 55, 57);
+    color: white;
+}

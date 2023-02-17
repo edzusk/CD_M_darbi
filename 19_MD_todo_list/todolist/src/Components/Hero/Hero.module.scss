@@ -1,0 +1,32 @@
+.table{
+    width: 100%;
+}
+.tablehedding{
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: 2px solid black;
+}
+
+.tableCell {
+    padding: 10px;
+    border: 2px dashed black;
+    text-align: center;
+}
+.tableWrapper{
+    background-color: rgb(126, 126, 108);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.delBtn {
+    padding: 10px 20px;
+    outline: none;
+    border: 3px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(49, 55, 57);
+    color: white;
+}
