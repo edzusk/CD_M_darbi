@@ -32,7 +32,7 @@ const App = () => {
       settodoList(data)
     });
 
-  },[settodoList])
+  },[])
 
   return (
     // <QueryClientProvider client={queryClient}>
