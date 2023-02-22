@@ -1,0 +1,8 @@
+CREATE DATABASE Animals;
+USE Animals;
+CREATE TABLE animals 
+    (id INT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR(255) NOT NULL,
+    habitat VARCHAR(255) NOT NULL,
+    imageUrl VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id));

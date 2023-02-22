@@ -15,8 +15,6 @@ export type  AnimalList = {
   animals: Animal[]
 }
 
-// const storedAnimals = localStorage.getItem('animals');
-// const initialAnimals: Animal[] = storedAnimals ? JSON.parse(storedAnimals) : [];
 const getStoredAnimals = () => {
   const storageStatuss = localStorage.getItem('animals');
   const storedAnimals: Animal[] = storageStatuss ? JSON.parse(storageStatuss) : [];
@@ -25,7 +23,6 @@ const getStoredAnimals = () => {
 
 const initialState: AnimalList = {
   animals: getStoredAnimals(),
-  // animals: [],
 }
 
 export const animalSlice = createSlice({
@@ -47,11 +44,7 @@ export const animalSlice = createSlice({
       state.animals =  getStoredAnimals().filter(animal => animal.habitat === action.payload )
     },
     removeAnimal: (state, action: PayloadAction<Animal["name"]>) => {
-      // state.animals = produce(initialAnimals, (draft: Draft<Animal[]>) => {
-      //   return draft.filter(animal => animal.name != action.payload)
-      // });
       state.animals = getStoredAnimals().filter(animal => animal.name !== action.payload )
-
       localStorage.setItem('animals', JSON.stringify(state.animals));
     },
   },
